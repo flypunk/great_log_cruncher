@@ -1,0 +1,1 @@
+INSERT INTO `rs_daily_by_buid` (`date`, `distinct_id_count`, `access_count`, `buid`) VALUES (%s, %s, %s, %s)

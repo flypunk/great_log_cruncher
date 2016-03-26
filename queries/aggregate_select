@@ -1,0 +1,10 @@
+select
+    count(distinct(Replace(REGEXP_SUBSTR( httprequest, 'distinct_id=[^\&]*'  ), 'distinct_id=',''))) as distinct_id_count,
+    count(*) as access_count,
+    Replace(REGEXP_SUBSTR( httprequest, 'app_key=[^\&]*'  ), 'app_key=', '') as app_key,
+    Replace(REGEXP_SUBSTR( httprequest, 'app_release=[^\&]*'  ), 'app_release=', '') as app_release,
+    Replace(REGEXP_SUBSTR( httprequest, 'api_version=[^\&]*'  ), 'api_version=', '') as api_version,
+    Replace(REGEXP_SUBSTR( httprequest, 'package_name=[^\&]*'  ), 'package_name=', '') as package_name
+        from elb_logs
+        group by app_key, app_release, api_version, package_name
+        order by distinct_id_count;

@@ -1,0 +1,1 @@
+INSERT INTO `rs_weekly_by_package_name` (`date`, `distinct_id_count`, `access_count`, `package_name`) VALUES (%s, %s, %s, %s)

@@ -1,0 +1,27 @@
+daily_rs_size: 5
+weekly_rs_size: 32
+monthly_rs_size: 32
+rs_instance_type: dc1.large
+rs_user: UUUUUUU
+rs_password: PPPPPPP
+
+s3_access_key: AAAAAAAAAAAAAAAAAA
+s3_secret_key: SSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+target_host: target_mysql
+target_db: target_mysql_db
+target_user: target_mysql_user
+target_password: target_mysql_password
+
+base_log_path: s3://log_bucket/pass/to/logs
+queries_path: queries
+prep_query_list: 
+- create_table
+- copy
+- vacuum
+- analyze
+
+data_query_kinds:
+- aggregate
+- package_name
+- buid

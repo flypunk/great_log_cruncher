@@ -1,0 +1,7 @@
+select
+    count(distinct(Replace(REGEXP_SUBSTR( httprequest, 'distinct_id=[^\&]*'  ), 'distinct_id=',''))) as distinct_id_count,
+    count(*) as access_count,
+    Replace(REGEXP_SUBSTR( httprequest, 'buid=[^\&]*'  ), 'buid=', '') as buid
+        from elb_logs
+        group by buid
+        order by distinct_id_count;

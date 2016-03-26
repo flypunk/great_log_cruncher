@@ -1,0 +1,18 @@
+CREATE TABLE elb_logs (
+     RequestTime DateTime encode lzo,
+     ELBName varchar(100) encode lzo,
+     RequestIP_Port varchar(22) encode lzo,
+     BackendIP_Port varchar(22) encode lzo,
+     RequestProcessingTime FLOAT encode bytedict,
+     BackendProcessingTime FLOAT encode bytedict,
+     ClientResponseTime FLOAT encode bytedict,
+     ELBResponseCode varchar(3) encode lzo,
+     BackendResponseCode varchar(3) encode lzo,
+     ReceivedBytes BIGINT encode lzo,
+     SentBytes BIGINT encode lzo,
+     HttpRequest varchar(5083) encode lzo,
+     UserAgent varchar(500) encode lzo,
+     SSL_Cipher varchar(40) encode lzo,
+     SSL_Protocol varchar(40) encode lzo
+)
+sortkey(RequestTime);

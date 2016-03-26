@@ -1,0 +1,1 @@
+INSERT INTO `rs_daily_device_count` (`date`, `distinct_id_count`, `access_count`, `app_key`, `app_release`, `api_version`, `package_name`) VALUES (%s, %s, %s, %s, %s, %s, %s)

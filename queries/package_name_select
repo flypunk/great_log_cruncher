@@ -1,0 +1,7 @@
+select
+    count(distinct(Replace(REGEXP_SUBSTR( httprequest, 'distinct_id=[^\&]*'  ), 'distinct_id=',''))) as distinct_id_count,
+    count(*) as access_count,
+    Replace(REGEXP_SUBSTR( httprequest, 'package_name=[^\&]*'  ), 'package_name=', '') as package_name
+        from elb_logs
+        group by package_name
+        order by distinct_id_count;

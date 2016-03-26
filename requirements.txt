@@ -1,0 +1,4 @@
+boto3
+psycopg2==2.6.1
+PyMySQL==0.7.0
+PyYAML==3.11
